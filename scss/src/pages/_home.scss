@@ -1,0 +1,32 @@
+.hero--slide1 {
+	background-image: url(../img/home-hero--slide1.jpg);
+}
+.hero--slide2 {
+	background-image: url(../img/home-hero--slide2.jpg);
+}
+.hero--slide3 {
+	background-image: url(../img/home-hero--slide3.jpg);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), 
+	only screen and (min--moz-device-pixel-ratio: 2), 
+	only screen and (-o-min-device-pixel-ratio: 2 / 1), 
+	only screen and (min-device-pixel-ratio: 2), 
+	only screen and (min-resolution: 192dpi), 
+	only screen and (min-resolution: 2dppx) {
+	.hero--slide1 {
+		background-image: url(../img/home-hero--slide1@2x.jpg);
+	}
+	.hero--slide2 {
+		background-image: url(../img/home-hero--slide2@2x.jpg);
+	}
+	.hero--slide3 {
+		background-image: url(../img/home-hero--slide3@2x.jpg);
+	}
+}
+@media (max-width: $screen-md-max) {
+	.hero--slide1,
+	.hero--slide2,
+	.hero--slide3 {
+		background-position: 68% 50%;
+	}
+}
