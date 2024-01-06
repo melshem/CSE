@@ -1,0 +1,75 @@
+/* ---------- typography  ----------  */
+html {
+	font-family: var(--primary-font-type);
+	font-weight: var(--font-medium);
+	font-size: 16px;
+	line-height: 1.53;
+	letter-spacing: -0.18px;
+	color: var(--text-primary, $dark);
+}
+h1 {
+	font-family: var(--primary-font-type);
+	font-weight: var(--font-extrabold);
+	font-size: 3rem;
+	letter-spacing: -2px;
+	line-height: 0.9;
+	text-transform: uppercase;
+}
+h2 {
+	font-family: var(--primary-font-type);
+	font-weight: var(--font-extrabold);
+	font-size: 2.5rem;
+	letter-spacing: 0;
+	line-height: 1;
+	text-transform: uppercase;
+}
+h3 {
+	font-family: var(--primary-font-type);
+	font-weight: var(--font-bold);
+	font-size: 1.875rem;
+	letter-spacing: -1.2px;
+	line-height: 1.2;
+}
+.display-1 {
+	font-family: var(--primary-font-type);
+	font-weight: var(--font-bold);
+	font-size: 5.5rem;
+	letter-spacing: -4.08px;
+	line-height: 0.9;
+	text-transform: uppercase;
+}
+.display-2 {
+	font-family: var(--secondary-font-type);
+	font-weight: var(--font-regular);
+	font-size: 1.2rem;
+	letter-spacing: -0.1px;
+	line-height: 1.36;
+}
+.link {
+	font-family: var(--primary-font-type);
+	font-weight: var(--font-bold);
+	font-size: 0.76rem;
+	line-height: 0.9;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--text-primary);
+}
+a,
+p a {
+	text-decoration: none;
+	color: inherit;
+}
+small {
+	font-size: 0.7rem;
+}
+@media (max-width: $screen-xs-max) {
+	h1 {
+		font-size: 2.567rem;
+	}
+}
+@media (max-width: $screen-sm-max) {
+	.display-1 {
+		font-size: 4rem;
+	}
+}
+/* ---------- end of typography  ----------  */

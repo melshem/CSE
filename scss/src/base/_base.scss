@@ -1,0 +1,71 @@
+:root {
+	--primary-blue: #0c2189;
+	--primary-dark: #131c26;
+	--primary-gray: #EFEFEF;
+	--primary-green: #3bd245;
+	--primary-yellow: #f9de43;
+	--secondary-cyan: #5fe3ea;
+	--secondary-green: #2ad06f;
+	--primary-font-type: 'Montserrat', sans-serif;
+	--secondary-font-type: 'Barlow Condensed', sans-serif;
+	--font-light: 300;
+	--font-regular: 400;
+	--font-medium: 500;
+	--font-semibold: 600;
+	--font-bold: 700;
+	--font-extrabold: 800;
+	--font-italic: italic;
+	--text-primary: #131c26;
+	--text-secondary: #FFFFFF;
+	--bg-white: #FFFFFF;
+	--bg-light: #EFEFEF;
+	--bs-light-rgb: 239, 239, 239;
+	--bg-dark: #131c26;
+	--bs-border-radius: 25px;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	background-color: var(--bg-white);
+}
+* {
+	text-rendering: geometricPrecision;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+*:focus {
+	outline: var(--primary-gray) thin dotted;
+}
+p {
+	padding-bottom: 1em;
+}
+img, svg {
+	max-width: 100%;
+	height: auto;
+}
+a {
+	transition: opacity 0.1s ease;
+	&:hover {
+		opacity: 0.7;
+	}
+}
+.text-primary-blue {
+	color: var(--primary-blue, $blue);
+}
+.text-secondary-green {
+	color: var(--secondary-green, $green);
+}
+.primary-font-type {
+	font-family: var(--primary-font-type) !important;
+}
+.secondary-font-type {
+	font-family: var(--secondary-font-type) !important;
+}
+.border-radius-25 {
+	border-radius: 1.5625em;
+}
+hr {
+	color: $dark;
+	opacity: 1;
+}

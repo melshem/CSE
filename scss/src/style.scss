@@ -1,0 +1,16 @@
+/*
+Theme Name: Code Sample
+Author: Mel Shemwell-Sattler
+Description: SCSS Code sample.
+I removed bootstrap scss and significantly reduced theme code for cleanliness and to protect my client's code. I also did not minify the css like I usually do for visibility.
+*/
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import 'base/reset';
+@import 'base/base';
+@import 'base/typography';
+
+@import 'components/animations';
+@import 'components/buttons';
+@import 'components/videos';

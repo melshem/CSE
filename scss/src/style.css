@@ -1,0 +1,512 @@
+/*
+Theme Name: Code Sample
+Author: Mel Shemwell-Sattler
+Description: SCSS Code sample.
+I removed bootstrap scss and significantly reduced theme code for cleanliness and to protect my client's code. I also did not minify the css like I usually do for visibility.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap");
+/* ---------- reset  ----------  */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=submit] {
+  -webkit-appearance: none;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+      text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* ---------- End of reset	----------	*/
+:root {
+  --primary-blue: #0c2189;
+  --primary-dark: #131c26;
+  --primary-gray: #EFEFEF;
+  --primary-green: #3bd245;
+  --primary-yellow: #f9de43;
+  --secondary-cyan: #5fe3ea;
+  --secondary-green: #2ad06f;
+  --primary-font-type: "Montserrat", sans-serif;
+  --secondary-font-type: "Barlow Condensed", sans-serif;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-italic: italic;
+  --text-primary: #131c26;
+  --text-secondary: #FFFFFF;
+  --bg-white: #FFFFFF;
+  --bg-light: #EFEFEF;
+  --bs-light-rgb: 239, 239, 239;
+  --bg-dark: #131c26;
+  --bs-border-radius: 25px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-white);
+}
+
+* {
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*:focus {
+  outline: var(--primary-gray) thin dotted;
+}
+
+p {
+  padding-bottom: 1em;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+.text-primary-blue {
+  color: var(--primary-blue, #0c2189);
+}
+
+.text-secondary-green {
+  color: var(--secondary-green, #2ad06f);
+}
+
+.primary-font-type {
+  font-family: var(--primary-font-type) !important;
+}
+
+.secondary-font-type {
+  font-family: var(--secondary-font-type) !important;
+}
+
+.border-radius-25 {
+  border-radius: 1.5625em;
+}
+
+hr {
+  color: #131c26;
+  opacity: 1;
+}
+
+/* ---------- typography  ----------  */
+html {
+  font-family: var(--primary-font-type);
+  font-weight: var(--font-medium);
+  font-size: 16px;
+  line-height: 1.53;
+  letter-spacing: -0.18px;
+  color: var(--text-primary, #131c26);
+}
+
+h1 {
+  font-family: var(--primary-font-type);
+  font-weight: var(--font-extrabold);
+  font-size: 3rem;
+  letter-spacing: -2px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: var(--primary-font-type);
+  font-weight: var(--font-extrabold);
+  font-size: 2.5rem;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: var(--primary-font-type);
+  font-weight: var(--font-bold);
+  font-size: 1.875rem;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+}
+
+.display-1 {
+  font-family: var(--primary-font-type);
+  font-weight: var(--font-bold);
+  font-size: 5.5rem;
+  letter-spacing: -4.08px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.display-2 {
+  font-family: var(--secondary-font-type);
+  font-weight: var(--font-regular);
+  font-size: 1.2rem;
+  letter-spacing: -0.1px;
+  line-height: 1.36;
+}
+
+.link {
+  font-family: var(--primary-font-type);
+  font-weight: var(--font-bold);
+  font-size: 0.76rem;
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+a,
+p a {
+  text-decoration: none;
+  color: inherit;
+}
+
+small {
+  font-size: 0.7rem;
+}
+
+@media (max-width: 575px) {
+  h1 {
+    font-size: 2.567rem;
+  }
+}
+@media (max-width: 767px) {
+  .display-1 {
+    font-size: 4rem;
+  }
+}
+/* ---------- end of typography  ----------  */
+/* ---------- animations  ----------  */
+.sliding-background {
+  background: url("images/slide.svg") repeat-x;
+  height: 620px;
+  width: 4629px;
+  -webkit-animation: slide 60s linear infinite;
+          animation: slide 60s linear infinite;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-1543px, 0, 0);
+            transform: translate3d(-1543px, 0, 0);
+  }
+}
+
+@keyframes slide {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-1543px, 0, 0);
+            transform: translate3d(-1543px, 0, 0);
+  }
+}
+.rotating-image {
+  -webkit-animation: rotate 10s cubic-bezier(0.04, 0.91, 0.4, 1) infinite;
+          animation: rotate 10s cubic-bezier(0.04, 0.91, 0.4, 1) infinite;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  20% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  20% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/* ---------- end of animations  ----------  */
+/* ---------- buttons  ----------  */
+.btn {
+  text-transform: uppercase;
+  overflow: hidden;
+  display: -ms-inline-grid;
+  display: inline-grid;
+}
+
+.btn-white {
+  background-color: #FFFFFF;
+}
+
+.link-line {
+  display: inline-block;
+  text-decoration: none;
+}
+.link-line:hover {
+  opacity: 1;
+}
+.link-line:hover::after {
+  -webkit-transform: scaleX(0.7);
+          transform: scaleX(0.7);
+}
+.link-line::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 0.4rem;
+  background: #131c26;
+  -webkit-transition: all 0.3s cubic-bezier(0.61, 1.85, 0.91, 0.65);
+  transition: all 0.3s cubic-bezier(0.61, 1.85, 0.91, 0.65);
+  transform-orgin: center;
+}
+
+/* ---------- end of buttons  ----------  */
+/* ---------- videos  ----------  */
+.video-bkg {
+  width: 100%;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.videobutton {
+  position: relative;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+}
+
+.videobutton:hover .playbutton {
+  -webkit-transform: translate(-50%, -54%);
+          transform: translate(-50%, -54%);
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.playbutton {
+  position: absolute;
+  width: 80px;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+.playbutton-sm {
+  width: 28px;
+  height: 28px;
+}
+
+.playbutton-md {
+  width: 65px;
+  height: 65px;
+}
+
+.playbutton-lg {
+  width: 150px;
+  height: 150px;
+}
+
+.modal-header {
+  padding-bottom: 0px;
+  border-bottom: 0px solid #FFFFFF;
+}
+
+.modal-body {
+  padding: 0.25rem;
+}
+
+.modal-content {
+  background-color: transparent;
+  border-radius: 0px;
+  border: 0;
+}
+
+.modal-header .close {
+  color: #000000;
+  border-radius: 25px;
+  margin: -2.5rem -2.5rem -1rem auto;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.modal-header .close:not(:disabled):not(.disabled):focus, .modal-header .close:not(:disabled):not(.disabled):hover {
+  color: #000000;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .playbutton-md {
+    width: 50px;
+    height: 50px;
+  }
+  .modal-header .close {
+    margin: -2.5rem -1.5rem -1rem auto;
+  }
+}
+/* ---------- End of videos  ----------  */

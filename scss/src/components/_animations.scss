@@ -1,0 +1,27 @@
+/* ---------- animations  ----------  */
+.sliding-background {
+  background: url("images/slide.svg") repeat-x;
+  height: 620px;
+  width: 4629px;
+  animation: slide 60s linear infinite;
+}
+
+@keyframes slide {
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-1543px, 0, 0);
+  }
+}
+
+.rotating-image {
+  animation: rotate 10s cubic-bezier(.04,.91,.4,1) infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(360deg); }
+  100% { transform: rotate(360deg); }
+}
+/* ---------- end of animations  ----------  */
