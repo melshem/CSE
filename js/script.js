@@ -1,20 +1,9 @@
-// Code sample: Animations and bootstrap 2 item carousel.
-
-
-// Checks if element is in the viewport
-function isElementInViewport(el) {
-	var rect = el.getBoundingClientRect();
-	return (
-		rect.top >= 0 &&
-		rect.left >= 0 &&
-		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-	);
-}
+// Code sample: Animations and bootstrap showing 2 items in carousel.
 
 const header = document.querySelector('#header');
 const menu = document.querySelector('.navbar');
 
+// Adds class that makes menu smaller on scroll
 window.addEventListener('scroll', () => {
 	// Add the 'shrink' class to the header menu when scrolled
 	if (window.scrollY > 0) {
@@ -24,6 +13,17 @@ window.addEventListener('scroll', () => {
 	}
 });
 
+// Checks if element is in the viewport
+// Got help from with this from JavaScript Tutorial
+function isElementInViewport(el) {
+	var rect = el.getBoundingClientRect();
+	return (
+		rect.top >= 0 &&
+		rect.left >= 0 &&
+		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+	);
+}
 // Transforms element from below to be visible
 window.addEventListener('scroll', function() {
 	var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -44,7 +44,8 @@ window.addEventListener('scroll', function() {
 });
 
 
-// Takes in a word array, splits the letters to reveal one at a time, and cycles through the words.
+// Takes in a word array, splits the letters to reveal one at a time, and cycles through the words. 
+// Got help with this from a LinkedIn tutorial.
 var words = document.getElementsByClassName('word');
 var wordArray = [];
 var currentWord = 0;
