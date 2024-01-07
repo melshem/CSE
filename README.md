@@ -3,8 +3,8 @@ Code example snippets from some projects.
 
 Tech
 ----------
-Bootstrap
-SCSS
+Bootstrap, 
+SCSS, 
 JavaScript
 
 WP plugins
